@@ -1,0 +1,10 @@
+import pandas as pd
+import numpy as np
+pages=[]
+df1=pd.DataFrame()
+for i in range(1,142):
+  pages.append(i)
+for page in pages:
+  url = "https://coronaclusters.in/plasma/requests?page={}".format(page)
+  df= pd.read_html(url)
+  df1=df1.append(df)
